@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <title>칠면조 - 파닥파닥 날아오르자!</title>
+    <meta name="description" content="파닥파닥 날아오르자!">
+    <meta name="keywords" content="칠면조, 끈기, 자신감, 성실함">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="칠면조">
+    <meta property="og:description" content="파닥파닥 날아오르자!">
+    <meta property="og:image" content="team.jpg">
+    <meta property="og:type" content="website">
+    
+    <style>
+        /* ===== 기본 리셋 및 전역 스타일 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* ===== 프레시 그린 색상 변수 ===== */
+        :root {
+            --primary-green: #2E7D32;
+            --secondary-green: #4CAF50;
+            --light-green: #81C784;
+            --pale-green: #E8F5E9;
+            --white: #ffffff;
+            --text-dark: #1B5E20;
+            --shadow-color: rgba(46, 125, 50, 0.3);
+        }
+        
+        /* ===== 섹션 공통 스타일 ===== */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+        
+        /* ===== 히어로 섹션 ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--pale-green) 0%, var(--light-green) 100%);
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--white);
+            box-shadow: 0 10px 40px var(--shadow-color);
+            margin-bottom: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* 볼드 임팩트 효과 - 히어로 이미지 */
+        .hero-image:hover {
+            transform: scale(1.15);
+            box-shadow: 0 20px 60px rgba(46, 125, 50, 0.5);
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero-slogan {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        /* ===== Team Values 섹션 ===== */
+        .values {
+            background-color: var(--white);
+        }
+        
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .value-card {
+            background: linear-gradient(145deg, var(--pale-green), var(--white));
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        /* 볼드 임팩트 효과 - Value 카드 */
+        .value-card:hover {
+            transform: scale(1.12);
+            box-shadow: 0 15px 40px var(--shadow-color);
+        }
+        
+        .value-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .value-card p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+        
+        /* ===== Team Members 섹션 ===== */
+        .members {
+            background-color: var(--pale-green);
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .member-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        /* 볼드 임팩트 효과 - Member 카드 */
+        .member-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px var(--shadow-color);
+        }
+        
+        .member-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--light-green), var(--secondary-green));
+        }
+        
+        .member-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .member-info p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* ===== Guestbook 섹션 ===== */
+        .guestbook {
+            background-color: var(--white);
+            padding-bottom: 100px;
+        }
+        
+        .guestbook-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--pale-green);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* ===== Footer ===== */
+        footer {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 1rem;
+        }
+        
+        footer a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        /* ===== 반응형 디자인 ===== */
+        
+        /* 태블릿 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-slogan {
+                font-size: 1.4rem;
+            }
+            
+            .hero-image {
+                width: 250px;
+                height: 250px;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .values-container {
+                gap: 30px;
+            }
+            
+            .members-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 30px;
+            }
+        }
+        
+        /* 모바일 */
+        @media (max-width: 480px) {
+            section {
+                padding: 60px 15px;
+            }
+            
+            .hero {
+                padding: 40px 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-slogan {
+                font-size: 1.2rem;
+            }
+            
+            .hero-image {
+                width: 200px;
+                height: 200px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+            }
+            
+            .value-card {
+                padding: 30px 20px;
+            }
+            
+            .value-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .value-card p {
+                font-size: 1rem;
+            }
+            
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .guestbook-container {
+                padding: 25px;
+            }
+        }
+        
+        /* ===== 스크롤 애니메이션을 위한 클래스 ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <img src="team.jpg" alt="칠면조 팀 사진" class="hero-image">
+        <h1>칠면조</h1>
+        <p class="hero-slogan">파닥파닥 날아오르자!</p>
+    </section>
+    
+    <!-- Team Values 섹션 -->
+    <section class="values">
+        <h2>Our Core Values</h2>
+        <div class="values-container">
+            <!-- 끈기 -->
+            <div class="value-card fade-in">
+                <div class="value-icon">💪</div>
+                <h3>끈기</h3>
+                <p>포기하지 않으면 언젠가 목표에 도달할 것이다.</p>
+            </div>
+            
+            <!-- 자신감 -->
+            <div class="value-card fade-in">
+                <div class="value-icon">🔥</div>
+                <h3>자신감</h3>
+                <p>20대를 막을 것은 없다, 모든 걸 뚫을 기세로 달린다.</p>
+            </div>
+            
+            <!-- 성실함 -->
+            <div class="value-card fade-in">
+                <div class="value-icon">⭐</div>
+                <h3>성실함</h3>
+                <p>목표에 도달하려면 필수로 지녀야하는 가치</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Members 섹션 -->
+    <section class="members">
+        <h2>Meet Our Team</h2>
+        <div class="members-grid">
+            <!-- 팀원 1: 김도현 -->
+            <div class="member-card fade-in">
+                <img src="member1.jpg" alt="김도현" class="member-image">
+                <div class="member-info">
+                    <h3>김도현</h3>
+                    <p>국가안보학과<br>대한민국을 이끄는 선두주자가 되겠습니다!!♥</p>
+                </div>
+            </div>
+            
+            <!-- 팀원 2: 이승주 -->
+            <div class="member-card fade-in">
+                <img src="member2.jpg" alt="이승주" class="member-image">
+                <div class="member-info">
+                    <h3>이승주</h3>
+                    <p>국가안보학과<br>운동 열심히 하겠습니다</p>
+                </div>
+            </div>
+            
+            <!-- 팀원 3: 조수경 -->
+            <div class="member-card fade-in">
+                <img src="member3.jpg" alt="조수경" class="member-image">
+                <div class="member-info">
+                    <h3>조수경</h3>
+                    <p>항상 한결같은 태도로 최선을 다하는 행정학과 학생이 되겠습니다.</p>
+                </div>
+            </div>
+            
+            <!-- 팀원 4: 박선주 -->
+            <div class="member-card fade-in">
+                <img src="member4.jpg" alt="박선주" class="member-image">
+                <div class="member-info">
+                    <h3>박선주</h3>
+                    <p>지적재산권전공<br>공부를 열심히!</p>
+                </div>
+            </div>
+            
+            <!-- 팀원 5: 서은채 -->
+            <div class="member-card fade-in">
+                <img src="member5.jpg" alt="서은채" class="member-image">
+                <div class="member-info">
+                    <h3>서은채</h3>
+                    <p>행정학부<br>매사에 긍정적일 수 있는 사람입니다</p>
+                </div>
+            </div>
+            
+            <!-- 팀원 6: 이지민 -->
+            <div class="member-card fade-in">
+                <img src="member6.jpg" alt="이지민" class="member-image">
+                <div class="member-info">
+                    <h3>이지민</h3>
+                    <p>행정학부<br>20살의 패기를 보여주겠습니다 파닥파닥🦃</p>
+                </div>
+            </div>
+            
+            <!-- 팀원 7: 구예림 -->
+            <div class="member-card fade-in">
+                <img src="member7.jpg" alt="구예림" class="member-image">
+                <div class="member-info">
+                    <h3>구예림</h3>
+                    <p>지적재산권전공<br>책임감과 전문성을 바탕으로 사람들의 창의력을 증진시키고, 더 넓은 창작의 세계를 구현하기 위한 열정을 지니고 있는 사람입니다.</p>
+                </div>
+            </div>
+            
+            <!-- 팀원 8: 김기현 -->
+            <div class="member-card fade-in">
+                <img src="member7.jpg" alt="김기현" class="member-image">
+                <div class="member-info">
+                    <h3>김기현</h3>
+                    <p>국가안보학과<br>끈기와 열정으로 모든지 열심히 합니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Guestbook 섹션 -->
+    <section class="guestbook">
+        <h2>Guestbook</h2>
+        <div class="guestbook-container">
+            <!-- Utterances 방명록 -->
+            <script src="https://utteranc.es/client.js"
+                    repo="aitrizkr/aiws_sm2026"
+                    issue-term="pathname"
+                    label="방명록"
+                    theme="github-dark"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 칠면조. Powered by <a href="https://ai.triz.kr" target="_blank">AI Portfolio Workshop</a>.</p>
+    </footer>
+    
+    <!-- JavaScript: 스크롤 애니메이션 -->
+    <script>
+        // 페이지 로드 시 스크롤 애니메이션 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            // Intersection Observer 설정
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            // 모든 fade-in 요소 관찰
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+        
+        // 부드러운 스크롤 효과 (앵커 링크가 있을 경우)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
